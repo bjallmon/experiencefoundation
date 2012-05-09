@@ -35,11 +35,12 @@ public class Game {
         return this.gameBoard;
     }
 
-    public void move(Cell cell, Player player) {
+    public boolean move(Cell cell, Player player) {
        if(getGameBoard().get(cell) == null) {
            getGameBoard().put(cell, player);
-           getGameBoard().isWinner();
+           return true;
        }
+       return false;
     }
 
 }

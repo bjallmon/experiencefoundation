@@ -81,12 +81,10 @@ public class TicTacToeTest {
 
     @Test
     public void cellShouldContainOnePlayer() {
-        game.move(Cell.A1, playerO);
-        game.move(Cell.A1, playerX);
+        assertTrue("Move should return true: ", game.move(Cell.A1, playerO));
+        assertFalse("Move should return false: ", game.move(Cell.A1, playerX));
         Player actualPlayer = game.getGameBoard().get(Cell.A1);
         assertEquals(playerO.getPlayerType(), actualPlayer.getPlayerType());
     }
-
-
 }
 
