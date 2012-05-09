@@ -33,21 +33,24 @@ public class TicTacToe {
     }
 
     public void printGameBoard(GameBoard<Cell,Player> gameBoard) {
-        String a1 = gameBoard.get(this.convertToCell(1)) != null ? gameBoard.get(this.convertToCell(1)).getPlayerType().toString() : "1";
-        String a2 = gameBoard.get(this.convertToCell(2)) != null ? gameBoard.get(this.convertToCell(2)).getPlayerType().toString() : "2";
-        String a3 = gameBoard.get(this.convertToCell(3)) != null ? gameBoard.get(this.convertToCell(3)).getPlayerType().toString() : "3";
-        String b1 = gameBoard.get(this.convertToCell(4)) != null ? gameBoard.get(this.convertToCell(4)).getPlayerType().toString() : "4";
-        String b2 = gameBoard.get(this.convertToCell(5)) != null ? gameBoard.get(this.convertToCell(5)).getPlayerType().toString() : "5";
-        String b3 = gameBoard.get(this.convertToCell(6)) != null ? gameBoard.get(this.convertToCell(6)).getPlayerType().toString() : "6";
-        String c1 = gameBoard.get(this.convertToCell(7)) != null ? gameBoard.get(this.convertToCell(7)).getPlayerType().toString() : "7";
-        String c2 = gameBoard.get(this.convertToCell(8)) != null ? gameBoard.get(this.convertToCell(8)).getPlayerType().toString() : "8";
-        String c3 = gameBoard.get(this.convertToCell(9)) != null ? gameBoard.get(this.convertToCell(9)).getPlayerType().toString() : "9";
-        
-        System.out.println("   " + a1 + "| " + a2 + " |" + a3 +"   ");
-        System.out.println("  --|---|--  ");
-        System.out.println("   " + b1 + "| " + b2 + " |" + b3 + "   ");
-        System.out.println("  --|---|--  ");
-        System.out.println("   " + c1 + "| " + c2 + " |" + c3 + "   ");
+        String a1 = gameBoard.get(this.convertToCell(1)) != null ? gameBoard.get(this.convertToCell(1)).getPlayerType().toString() : " ";
+        String a2 = gameBoard.get(this.convertToCell(2)) != null ? gameBoard.get(this.convertToCell(2)).getPlayerType().toString() : " ";
+        String a3 = gameBoard.get(this.convertToCell(3)) != null ? gameBoard.get(this.convertToCell(3)).getPlayerType().toString() : " ";
+        String b1 = gameBoard.get(this.convertToCell(4)) != null ? gameBoard.get(this.convertToCell(4)).getPlayerType().toString() : " ";
+        String b2 = gameBoard.get(this.convertToCell(5)) != null ? gameBoard.get(this.convertToCell(5)).getPlayerType().toString() : " ";
+        String b3 = gameBoard.get(this.convertToCell(6)) != null ? gameBoard.get(this.convertToCell(6)).getPlayerType().toString() : " ";
+        String c1 = gameBoard.get(this.convertToCell(7)) != null ? gameBoard.get(this.convertToCell(7)).getPlayerType().toString() : " ";
+        String c2 = gameBoard.get(this.convertToCell(8)) != null ? gameBoard.get(this.convertToCell(8)).getPlayerType().toString() : " ";
+        String c3 = gameBoard.get(this.convertToCell(9)) != null ? gameBoard.get(this.convertToCell(9)).getPlayerType().toString() : " ";
+
+        System.out.println("\n           Choose a number!      LIVE BOARD!");
+        System.out.println("        ------------------------------------------");
+        System.out.println("              1 | 2 | 3   " + "        " + a1 + " | " + a2 + " | " + a3 +"   ");
+        System.out.println("             ---|---|---  " + "       ---|---|---  ");
+        System.out.println("              4 | 5 | 6   " + "        " + b1 + " | " + b2 + " | " + b3 + "   ");
+        System.out.println("             ---|---|--   " + "       ---|---|---  ");
+        System.out.println("              7 | 8 | 9   " + "        " + c1 + " | " + c2 + " | " + c3 + "   \n");
+
     }
     
     public Cell convertToCell(int convert) {
@@ -62,9 +65,14 @@ public class TicTacToe {
         int whoseTurnIsIt = 0;
         
         TicTacToe ticTacToe = new TicTacToe();
+        System.out.println("");
+        System.out.println("    |=====================================================|");
+        System.out.println("    ||                                                   ||");
+        System.out.println("    ||    W e l c o m e    t o    T i c T a c T o e !    ||");
+        System.out.println("    ||                                                   ||");
+        System.out.println("    |=====================================================|");
+        System.out.println("");
 
-        System.out.println("Welcome to tic tac toe!");
-        
         Game game = new Game();
         game.startGame();
 
@@ -73,8 +81,6 @@ public class TicTacToe {
         while (!(game.getGameBoard().isWinner()) ) {
             List<Player> players = game.getPlayers();
 
-            System.out.println("Make Your Move!");
-            System.out.println("=============");
             ticTacToe.printGameBoard(game.getGameBoard());
 
             int move = -1;
@@ -101,10 +107,10 @@ public class TicTacToe {
         }
         
         System.out.println("\n\n\n");
-        System.out.println("***************************************************");
+        System.out.println("     ***************************************************");
         ticTacToe.printGameBoard(game.getGameBoard());
-        System.out.println("Player " + currentPlayer.getPlayerType().toString() + " wins!");
-        System.out.println("***************************************************");
+        System.out.println("\n              P l a y e r    " + currentPlayer.getPlayerType().toString() + "    w i n s ! \n");
+        System.out.println("     ***************************************************");
         System.out.println("\n\n\n\n\n");
     }
 }
